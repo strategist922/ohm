@@ -1,0 +1,19 @@
+package mdb;
+
+option java_package = "com.telenav.mdb.protos";
+option java_outer_classname = "PoiProtos";
+
+message Poi {
+  required string id = 1;
+  required int64 node_index = 2;
+  required string city = 3;
+  required string state = 4;
+  required string vendor = 5;
+  
+  optional int32 version = 7;
+  repeated PhoneNumber phone = 8;
+}
+
+message PhoneNumber {
+   required string phone = 1;
+}
