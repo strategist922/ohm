@@ -10,19 +10,19 @@ OHM provides a simple API for HDFS, which has below features
 
 *** Samples
 upload and download files
-#+srcname: FSTest.java 
-#+begin_src java
+
+#+BEGIN_SRC java
    	TFileSystem fs = FileSystems.getDefault();
 	String local = "/home/readme.txt";
         String remote = HPath.hdfs_scheme + "/tmp/readme";
 
         fs.copy(new HPath(local), new HPath(remote)); //upload
         fs.copy(new HPath(remote), new HPath(local)); //download
-#+end_src
+#+END_SRC
 
 Meta Data
-#+srcname: FSMetaTest.java
-#+begin_src java
+
+#+BEGIN_SRC java
         TFile file = fs.open(new HPath(remote));
 
 	Map<String, String> meta = new HashMap<String, String>();
@@ -30,7 +30,7 @@ Meta Data
         file.setMeta(meta);
    
 	Map<String, String> meta2 = file.getMeta();
-#+end_src        
+#+END_SRC       
 
 
 ** Object to HBase Mapping
